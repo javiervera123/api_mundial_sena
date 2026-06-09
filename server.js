@@ -1,14 +1,14 @@
 
 // 1. IMPORTACIÓN DE DEPENDENCIAS
 const express = require('express'); // Framework para crear el servidor y manejar rutas
-const cors = require('cors');       // Middleware para permitir peticiones desde el frontend (CORS)
+const cors = require('cors');       // Middleware, permite peticiones desde el frontend, no bloquea si hy 2 puertos diferentes
 const morgan = require('morgan'); // Para ver los logs de las peticiones en consola
 const mongoose = require('mongoose');// Para conectar con MongoDB Atlas
 const dotenv = require('dotenv');   // Para manejar variables de entorno (como la URL secreta de MongoDB)
-
+// importo las rutas de equipos
+const equipoRoutes = require('./routes/EquipoRoutes');
 // 2. CONFIGURACIONES INICIALES
 const app = express();  // instancia de Express para crear el servidor
-
 dotenv.config(); // dotenv para leer las variables del archivo .env secreto
 
 const PORT = process.env.PORT || 5000;
@@ -18,6 +18,7 @@ app.use(cors()); // Permite peticiones desde otros dominios (Frontend)
 app.use(morgan('dev')); // Pinta en la consola las peticiones HTTP que vayan llegando
 // Esto reemplaza a body-parser. Permite que el servidor entienda formato JSON
 app.use(express.json()); 
+app.use('/api/equipo', equipoRoutes); // Usar las rutas de equipos
 
 // 4. CONEXIÓN A LA BASE DE DATOS (MongoDB Atlas)
 // process.env.MONGO_URI jalará la URL secreta que guardé en el archivo .env

@@ -41,10 +41,8 @@ const createNewEquipo = (req, res, next) => {
             );
         })
         .catch((error) => {
-            // IMPORTANTE: Este console.log te mostrará en la terminal de VS Code 
-            // el motivo exacto si llega a fallar por otra validación.
+            // Este console.log mostrará en la terminal de VS Code 
             console.error("Error detallado de Mongoose:", error);
-
             // Respondemos con un código 400 (Bad Request) porque la base de datos lo rechazó
             res.status(400).json({
                 message: 'Error al crear el equipo',

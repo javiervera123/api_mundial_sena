@@ -7,8 +7,9 @@ router.get('/', partidoController.queryPartido);
 router.get('/:id', partidoController.queryPartidoById);
 router.post('/guardar', partidoController.createNewPartido);
 router.put('/partidos/:id', partidoController.updatePartidoById);
-router.delete('/partidos/:id', partidoController.deletePartidoById);
-router.delete('/partidos', partidoController.deleteAllPartidos);
+router.patch('/actualizar-hora', partidoController.updatePartidoTime);
+router.delete('/eliminar', partidoController.deletePartidoById);
+router.delete('/eliminarAll', partidoController.deleteAllPartidos);
         
        
 

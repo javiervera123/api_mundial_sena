@@ -1,0 +1,234 @@
+{
+  "info": {
+    "_postman_id": "2e8ed4bd-83cd-4e93-8e86-c45337acd22e",
+    "name": "api_mundial_sena",
+    "description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests a user can send?",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49714714",
+    "_collection_link": "https://go.postman.co/collection/49714714-2e8ed4bd-83cd-4e93-8e86-c45337acd22e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Equipos",
+      "item": [
+        {
+          "name": "get-jugadores-mas-altos",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "get-jugadores-mas-bajitos",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/equipos/jugadores-bajitos",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "equipos",
+                    "jugadores-bajitos"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "413"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"19d-VygMjcWyqeaGSFdndL04XwqnEeY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 14 Jun 2026 03:56:41 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Listado de jugadores con estatura inferior a 170 cm obtenido con éxito\",\n    \"cantidad\": 3,\n    \"jugadores\": [\n        {\n            \"country\": \"Colombia\",\n            \"nombre\": \"J. QUINTERO\",\n            \"estatura\": 169,\n            \"posicion\": \"CM\",\n            \"club\": \"CA River Plate (ARG)\"\n        },\n        {\n            \"country\": \"Japan\",\n            \"nombre\": \"INUI\",\n            \"estatura\": 169,\n            \"posicion\": \"CM\",\n            \"club\": \"SD Eibar (ESP)\"\n        },\n        {\n            \"country\": \"Japan\",\n            \"nombre\": \"OHSHIMA\",\n            \"estatura\": 168,\n            \"posicion\": \"CM\",\n            \"club\": \"Kawasaki Frontale (JPN)\"\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Partidos",
+      "item": [
+        {
+          "name": "crear_partido_Colombia_Japón",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "get-partidos-existentes",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/partidos/",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "partidos",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "409"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"199-YguzWNp+biPksTky3XunMr1Mvko\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 14 Jun 2026 03:57:37 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"_id\": \"6a2b6399dca558de0d5fe5f4\",\n        \"equipo1\": \"Colombia\",\n        \"equipo2\": \"Japón\",\n        \"date\": \"11/07/2018\",\n        \"time\": \"12:00:00 p. m.\",\n        \"createdAt\": \"2026-06-12T01:40:42.007Z\",\n        \"updatedAt\": \"2026-06-12T01:40:42.007Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6a2cbab0d44cafc2f8494dd9\",\n        \"equipo1\": \"Colombia\",\n        \"equipo2\": \"poland\",\n        \"date\": \"26/07/2018\",\n        \"time\": \"7:30:00 p.m.\",\n        \"createdAt\": \"2026-06-13T02:04:32.781Z\",\n        \"updatedAt\": \"2026-06-13T02:09:00.441Z\",\n        \"__v\": 0\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "eliminar_equipos",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "eliminar_equipos",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5000/api/equipos/eliminar",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "equipos",
+                    "eliminar"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "68"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"44-vKap8w9YsWAq2w/hMYwQkQK6PyU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 14 Jun 2026 04:00:49 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Todos los equipos han sido eliminados\",\n    \"deletedCount\": 2\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

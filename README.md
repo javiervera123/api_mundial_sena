@@ -48,3 +48,26 @@ Debido a que el modelo de datos de nuestra base de datos NoSQL implementa **Docu
 2. **Uso del operador posicional `$`` de MongoDB:** En la sección de actualización, se utiliza la sintaxis `"jugadores.$.club"`. El símbolo de dólar (`$`) actúa como un marcador de posición dinámico que identifica el índice exacto del elemento del array que coincidió con el filtro de búsqueda.
 3. **Operador `$set`:** Modifica exclusivamente las propiedades indicadas (`club` y `shirtName`) en lugar de alterar el resto de los campos del jugador o del equipo, manteniendo la integridad de los datos.
 4. **Opción `{ new: true }`:** Fuerza a Mongoose a retornar en la promesa el documento final modificado, permitiendo enviar a Thunder Client el JSON actualizado con el código de estado HTTP `200 OK`.
+
+# Taller de rutas de la apiRest (Evidencia AA2-EV01)
+1. **Módulo de Equipos y Jugadores
+    POST /api/equipos/guardar (o inserción inicial): 
+Registro de los datos base de prueba para los equipos de Colombia y Japón. 
+     GET /api/equipos/jugadores-japon: 
+Consulta filtrada de la información requerida de todos los jugadores de Japón.  
+    GET /api/equipos/jugadores-bajitos:
+ Pipeline de agregación para listar los jugadores con estatura estrictamente menor a 170 cm.  
+    GET / api/equipos/jugadores-mas-altos: 
+Pipeline con $group y $sort para obtener los jugadores con la máxima estatura.  
+    PUT /api/equipos/:idEquipo/jugadores/:idJugador: 
+Actualización dirigida del subdocumento de un jugador específico (usado para el cambio de club y nombre de James Rodríguez).  
+
+**Módulo de Partidos
+    POST /api/partidos/guardar: 
+Creación e inserción de un nuevo partido (ej. Colombia vs. Inglaterra). 
+    GET /api/partidos/: 
+Consulta general de todos los partidos registrados en el sistema. 
+    PATCH /api/partidos/actualizar-hora:
+ Modificación parcial por el body (idPartido y time) para cambiar el horario de un encuentro.
+    DELETE /api/partidos/eliminar: 
+Borrado físico de un partido específico mediante el envío de su idPartido en el cuerpo de la solicitud

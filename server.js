@@ -15,6 +15,7 @@ const app = express();  // instancia de Express para crear el servidor
 
 const PORT = process.env.PORT || 5000;
 
+app.disable('x-powered-by'); // Deshabilita la cabecera que dice que el servidor es Express, por seguridad
 // 3. MIDDLEWARES (Funciones intermedias)
 app.use(cors()); // Permite peticiones desde otros dominios (Frontend)
 app.use(morgan('dev')); // Pinta en la consola las peticiones HTTP que vayan llegando
@@ -32,7 +33,8 @@ mongoose.connect(process.env.MONGO_URI)
 // 5. RUTAS DE PRUEBA
 // Una ruta simple en la raíz '/' para verificar que el servidor responda
 app.get('/', (req, res) => {
-    res.json({ mensaje: "¡Bienvenido a la API del Mundial Rusia 2018 de Javier!" });
+    res.send('<h1> Bienvenidoss a la API del Mundial Rusia 2018 de Javier</h1>');
+    res.json({ mensaje: "¡Bienvenidos a la API del Mundial Rusia 2018 de Javier!" });
 });
 
 // 6. ARRANQUE DEL SERVIDOR
